@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <div class="navbar-container"> 
+            <div class="nav-left">
+                <div class="navbar-title">Lorem IPSUM</div>
+                <nav class="nav-links d-none d-lg-flex"> 
+                    <a href="#">Dolor</a>
+                    <a href="#">Sit</a>
+                    <a href="#">Amet</a>
+                </nav>
+            </div>
+            <input type="text" class="search-input d-none d-lg-flex" placeholder="Search">
+            <button class="hamburger-menu d-lg-none">&#9776;</button>
+        </div>
+        <!-- Menú desplegable debajo del navbar -->
+        <div class="dropdown-menu d-lg-none">
+            <input type="text" class="dropdown-menu-search" placeholder="Search">
+            <a class="dropdown-menu-content" href="#">Dolor</a>
+            <a class="dropdown-menu-content" href="#">Sit</a>
+            <a class="dropdown-menu-content" href="#">Amet</a>
+            <button class="dropdown-menu-content" id="option">Opciones</button>
+        </div>
+    </header>
+
+    <!-- Script para la navbar -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Menu hamburguesa
+            const hamburgerMenu = document.querySelector(".hamburger-menu");
+            const dropdownMenu = document.querySelector(".dropdown-menu");
+
+            hamburgerMenu.addEventListener("click", function () {
+                dropdownMenu.classList.toggle("d-flex");
+                dropdownMenu.classList.toggle("d-none");
+            });
+
+
+            // Opciones
+            const option = document.getElementById("option");
+            const optionContent = document.getElementById("option-content");
+
+            option.addEventListener("click", function (){
+                optionContent.classList.toggle("d-none");
+            });
+        });
+    </script>
+
+
+    <section class="container mt-4">
+        <!-- Título principal y carrusel -->
+        <h2 class="text-center">Título Principal</h2>
+        
+        <div id="carousel-container" class="carousel">
+            <div class="carrousel-item active">
+                <h3>El inicio del carrousel</h3>
+            </div>
+            <div class="carrousel-item">
+                <h3>Segundo texto del carrousel</h3>
+            </div>
+            <div class="carrousel-item">
+                <h3>Ultimo de los textos</h3>
+            </div>
+        </div>
+
+        <script>
+            const carrousel = document.querySelectorAll(".carrousel-item");
+            let count = 0;
+        
+            function rotate() {
+                //oculto
+                carrousel[count].classList.remove("active");
+        
+                // siguiente
+                count = (count + 1) % carrousel.length;
+        
+                // muestro
+                carrousel[count].classList.add("active");
+            }
+        
+            setInterval(rotate, 2000);
+        </script>
+
+        <!-- Sidebar y contenido principal -->
+        <div class="content-section row ">
+            <!-- Sidebar -->
+            <aside class="d-none d-lg-block col-lg-3" id="option-content">
+                <a href="#" class="sidebar-option">Opción 1</a>
+                <a href="#" class="sidebar-option">Opción 2</a>
+                <a href="#" class="sidebar-option">Opción 3</a>
+                <a href="#" class="sidebar-option">Opción 4</a>
+            </aside>
+        
+            <!-- Contenido principal -->
+            <section class="main-content col-lg-9">
+                <div class="content-rows">
+                    <div class="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1">
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo unde, repudiandae numquam et optio ipsam animi non facilis dolorem reiciendis quidem praesentium placeat, maxime molestias illo, omnis officiis modi expedita!</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis, magnam rem officiis vitae fuga nesciunt neque! Fugit obcaecati autem neque quidem voluptates reiciendis perferendis dolore maxime sapiente, nisi aspernatur?</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis, magnam rem officiis vitae fuga nesciunt neque! Fugit obcaecati autem neque quidem voluptates reiciendis perferendis dolore maxime sapiente, nisi aspernatur?</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis, magnam rem officiis vitae fuga nesciunt neque! Fugit obcaecati autem neque quidem voluptates reiciendis perferendis dolore maxime sapiente, nisi aspernatur?</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis, magnam rem officiis vitae fuga nesciunt neque! Fugit obcaecati autem neque quidem voluptates reiciendis perferendis dolore maxime sapiente, nisi aspernatur?</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis, magnam rem officiis vitae fuga nesciunt neque! Fugit obcaecati autem neque quidem voluptates reiciendis perferendis dolore maxime sapiente, nisi aspernatur?</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis, magnam rem officiis vitae fuga nesciunt neque! Fugit obcaecati autem neque quidem voluptates reiciendis perferendis dolore maxime sapiente, nisi aspernatur?</div>
+                        <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam omnis, magnam rem officiis vitae fuga nesciunt neque! Fugit obcaecati autem neque quidem voluptates reiciendis perferendis dolore maxime sapiente, nisi aspernatur?</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    
+</body>
+</html>
